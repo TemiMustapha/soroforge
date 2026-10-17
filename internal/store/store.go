@@ -79,6 +79,11 @@ type Deployment struct {
 	// Notes is free-form operator context, e.g. a ticket or release tag.
 	Notes string `json:"notes,omitempty"`
 
+	// CIRunURL is the CI pipeline run URL when deployed from GitHub Actions or
+	// GitLab CI. Outside CI this is empty. It answers "which commit and merge
+	// triggered this deploy" for audit purposes.
+	CIRunURL string `json:"ci_run_url,omitempty"`
+
 	CreatedAt time.Time `json:"created_at"`
 }
 

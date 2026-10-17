@@ -200,6 +200,7 @@ func (s *Service) Upgrade(ctx context.Context, req UpgradeRequest) (*UpgradeResu
 		TxHash:         upgrade.Hash,
 		Ledger:         upgrade.Ledger,
 		Notes:          req.Notes,
+		CIRunURL:       ciRunURL(),
 	})
 	if err != nil {
 		return nil, err
